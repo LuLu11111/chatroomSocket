@@ -1,9 +1,11 @@
 const server = require("http").Server();
-const port = 10001;
+const port = process.evn.PORT || 10001;
 
 var io = require("socket.io")(server);
+
 var usernames =[];
 var msgs =[];
+
 io.on("connection", function(socket){
     console.log("User is connected");
     
